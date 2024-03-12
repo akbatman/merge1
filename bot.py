@@ -734,7 +734,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot Booted With Premium Account,\n\n  Thanks For Using <a href='https://t.me/Sujan_BotZ'>This Channel</a>",
+                text="Bot Booted With Premium Account,\n\n  Thanks For Using <a href='https://t.me/master793'>This Channel</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
