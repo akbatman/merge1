@@ -275,7 +275,7 @@ async def files_handler(c: Client, m: Message):
             )
             return
         editable = await m.reply_text("Pʟᴇᴀꜱᴇ Wᴀɪᴛ  ...", quote=True)
-        MessageText = "\nNᴏᴡ Sᴇɴᴅ Mᴇ Nᴇxᴛ Vɪᴅᴇᴏ Oʀ Pʀᴇꜱꜱ **Mᴇʀɢᴇ Nᴏᴡ** Button!"
+        MessageText = "Okay,\nNᴏᴡ Sᴇɴᴅ Mᴇ Nᴇxᴛ Vɪᴅᴇᴏ Oʀ Pʀᴇꜱꜱ **Mᴇʀɢᴇ Nᴏᴡ** Button!"
 
         if queueDB.get(user_id, None) is None:
             queueDB.update({user_id: {"videos": [], "subtitles": [], "audios": []}})
@@ -430,7 +430,7 @@ async def media_extracter(c: Client, m: Message):
             mid=rmess.id
             file_name = media.file_name
             if file_name is None:
-                await m.reply("File name not found; goto MAST€R793™")
+                await m.reply("File name not found; goto @Sujan_BotZ")
                 return
             markup = bMaker.makebuttons(
                 set1=["Audio", "Subtitle", "Cancel"],
@@ -488,7 +488,9 @@ async def about_handler(c: Client, m: Message):
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("🌿 Uᴘᴅᴀᴛᴇꜱ 🌿", url="https://t.me/master793")
+                [InlineKeyboardButton("🌿 Uᴘᴅᴀᴛᴇꜱ 🌿", url="https://t.me/Sujan_BotZ")
+                        ],[
+                InlineKeyboardButton("❇️ Oᴡɴᴇʀ ❇️", url="https://t.me/Sujan_Bots")
                         ],[
                 InlineKeyboardButton("Close 🔐", callback_data="close")],
             ]
@@ -705,7 +707,7 @@ async def makeButtons(bot: Client, m: Message, db: dict):
                     ]
                 )
 
-    markup.append([InlineKeyboardButton("♻️ Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge")],
+    markup.append([InlineKeyboardButton("♻️ Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge")]
     markup.append([InlineKeyboardButton("🗑️ Cʟᴇᴀʀ Fɪʟᴇꜱ", callback_data="cancel")]))
     return markup
 
@@ -734,7 +736,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot Booted With Premium Account,\n\n  Thanks For Using <a href='https://t.me/master793'>This Channel</a>",
+                text="Bot Booted With Premium Account,\n\n  Thanks For Using <a href='https://t.me/master'>This Channel</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
