@@ -107,7 +107,7 @@ async def MergeSub(filePath: str, subPath: str, user_id):
     LOGGER.info("Muxing subtitles")
     subprocess.call(muxcmd)
     orgFilePath = shutil.move(
-        f"downloads/{str(user_id)}/[@Sujan_BotZ]_softmuxed_video.mkv", filePath
+        f"downloads/{str(user_id)}/[MAST€R793™]_softmuxed_video.mkv", filePath
     )
     return orgFilePath
 
