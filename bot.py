@@ -707,10 +707,8 @@ async def makeButtons(bot: Client, m: Message, db: dict):
                     ]
                 )
 
-    markup.append([[
-	    InlineKeyboardButton("♻️ Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge"),
-    markup.append(InlineKeyboardButton("🗑️ Cʟᴇᴀʀ Fɪʟᴇꜱ", callback_data="cancel")
-		  ]])
+    markup.append([InlineKeyboardButton("♻️ Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge")]),
+    markup.append([InlineKeyboardButton("🗑️ Cʟᴇᴀʀ Fɪʟᴇꜱ", callback_data="cancel")])
     return markup
 
 
