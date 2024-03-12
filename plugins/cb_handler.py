@@ -40,11 +40,10 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton(
-                            "📤 To Telegram", callback_data="to_telegram"
+                            "📤 Telegram", callback_data="to_telegram"
                         ),
-                        InlineKeyboardButton("🌫️ To Drive", callback_data="to_drive"),
-                    ],
-                    [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
+                        InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel"),
+                    ]
                 ]
             ),
         )
@@ -68,7 +67,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             return
         UPLOAD_TO_DRIVE.update({f"{cb.from_user.id}": True})
         await cb.message.edit(
-            text="Okay I'll upload to drive\nDo you want to rename? Default file name is **[@Sujan_BotZ]_merged.mkv**",
+            text="Okay I'll upload to drive\nDo you want to rename? Default file name is **MAST€R793™.merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -100,7 +99,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "document":
         UPLOAD_AS_DOC.update({f"{cb.from_user.id}": True})
         await cb.message.edit(
-            text="Do you want to rename? Default file name is **[@Sujan_BotZ]_merged.mkv**",
+            text="Do you want to rename? Default file name is **MAST€R793™.merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -116,7 +115,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "video":
         UPLOAD_AS_DOC.update({f"{cb.from_user.id}": False})
         await cb.message.edit(
-            text="Do you want to rename? Default file name is **[@Sujan_BotZ]_merged.mkv**",
+            text="Do you want to rename? Default file name is **MAST€R793™.merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -146,7 +145,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         user = UserSettings(cb.from_user.id, cb.from_user.first_name)
         if "YES" in cb.data:
             await cb.message.edit(
-                "Current filename: **[@Sujan_BotZ]_merged.mkv**\n\nSend me new file name without extension: You have 1 minute"
+                "Current filename: **MAST€R793™.merged.mkv**\n\nSend me new file name without extension: You have 1 minute"
             )
             res: Message = await c.listen(chat_id=cb.message.chat.id, filters=filters.text, listener_type=ListenerTypes.MESSAGE, timeout=120, user_id=cb.from_user.id)
             if res.text:
